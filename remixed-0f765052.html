@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khusus Buat Kamu Beibbeeee... 🥺</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(135deg, #fef6f3 0%, #fff0f8 25%, #f5f0ff 50%, #e8f4ff 75%, #fff5f0 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            color: #6b5b6e;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .floating-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .float-heart {
+            position: absolute;
+            font-size: 25px;
+            opacity: 0;
+            animation: floatUp 6s linear infinite;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% { opacity: 0.7; }
+            90% { opacity: 0.7; }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            opacity: 0;
+            animation: fadeIn 0.8s forwards;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        .cute-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(15px);
+            padding: 45px 35px;
+            border-radius: 35px;
+            box-shadow: 0 15px 50px rgba(255, 182, 193, 0.2);
+            margin: 20px 0;
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+            position: relative;
+            border: 2px solid rgba(255, 200, 220, 0.3);
+        }
+
+        .cute-card::before {
+            content: '💕';
+            position: absolute;
+            top: -20px;
+            right: -10px;
+            font-size: 2.5em;
+            animation: bounce 2s infinite;
+        }
+
+        .cute-card::after {
+            content: '✨';
+            position: absolute;
+            bottom: -15px;
+            left: -10px;
+            font-size: 2em;
+            animation: bounce 2s 0.5s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        h1 {
+            font-family: 'Nunito', sans-serif;
+            font-size: 2.5em;
+            background: linear-gradient(135deg, #ff9eb3 0%, #b89cc4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        h2 {
+            font-family: 'Nunito', sans-serif;
+            font-size: 1.8em;
+            color: #b89cc4;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .typing-text {
+            font-size: 1.3em;
+            margin: 20px 0;
+            line-height: 1.6;
+            min-height: 120px;
+        }
+
+        .emoji-big {
+            font-size: 5em;
+            margin: 20px 0;
+            animation: wiggle 1s infinite;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .emoji-big:hover {
+            transform: scale(1.2);
+        }
+
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-8deg); }
+            75% { transform: rotate(8deg); }
+        }
+
+        .hidden-secret {
+            position: fixed;
+            font-size: 4em;
+            cursor: pointer;
+            z-index: 1000;
+            transition: transform 0.3s;
+            filter: drop-shadow(0 8px 15px rgba(255, 158, 179, 0.6));
+        }
+
+        .hidden-secret:hover {
+            transform: scale(1.4) rotate(20deg);
+        }
+
+        .secret-hint {
+            position: fixed;
+            background: linear-gradient(135deg, #ff9eb3 0%, #ffb3cc 100%);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 25px;
+            font-size: 1em;
+            font-weight: 700;
+            z-index: 999;
+            animation: bounce 2s infinite;
+            box-shadow: 0 8px 20px rgba(255, 158, 179, 0.5);
+            pointer-events: none;
+            font-family: 'Pacifico', cursive;
+        }
+
+        .mood-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .mood-btn {
+            font-family: 'Quicksand', sans-serif;
+            padding: 22px;
+            font-size: 1.15em;
+            background: linear-gradient(135deg, #ffd6e3 0%, #ffe6f0 100%);
+            border: 3px solid #ffb3cc;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+            color: #8b5a6e;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mood-btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(255, 179, 204, 0.5);
+            border-color: #ff9eb3;
+        }
+
+        .mood-response {
+            margin-top: 20px;
+            padding: 25px;
+            background: linear-gradient(135deg, #fff5f8 0%, #fef9ff 100%);
+            border-radius: 18px;
+            font-size: 1.15em;
+            border-left: 5px solid #ff9eb3;
+            text-align: left;
+            display: none;
+            line-height: 1.7;
+        }
+
+        .mood-response.show {
+            display: block;
+            animation: slideIn 0.5s;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .gombal-box {
+            background: linear-gradient(135deg, #ffe6f0 0%, #e8f4ff 100%);
+            padding: 28px;
+            border-radius: 22px;
+            margin: 18px 0;
+            font-size: 1.2em;
+            font-weight: 500;
+            color: #7a5d7f;
+            border: 2px dashed #ffb3cc;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .gombal-box:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 20px rgba(255, 179, 204, 0.3);
+            border-style: solid;
+        }
+
+        .quiz-container {
+            margin: 30px 0;
+        }
+
+        .quiz-question {
+            font-size: 1.4em;
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: #8b5a6e;
+        }
+
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .quiz-btn {
+            font-family: 'Quicksand', sans-serif;
+            padding: 20px;
+            font-size: 1.1em;
+            background: white;
+            border: 3px solid #d4b3e3;
+            border-radius: 18px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+            color: #7a5d7f;
+        }
+
+        .quiz-btn:hover {
+            background: linear-gradient(135deg, #f5e6ff 0%, #ffe6f0 100%);
+            transform: scale(1.03);
+            border-color: #b89cc4;
+        }
+
+        .effort-list {
+            background: white;
+            padding: 35px;
+            border-radius: 22px;
+            margin: 20px 0;
+            text-align: left;
+            box-shadow: 0 8px 25px rgba(180, 140, 200, 0.15);
+        }
+
+        .effort-item {
+            padding: 18px;
+            margin: 12px 0;
+            background: linear-gradient(135deg, #fff5f8 0%, #f5f0ff 100%);
+            border-radius: 15px;
+            border-left: 5px solid #b89cc4;
+            font-size: 1.1em;
+            transition: all 0.3s;
+        }
+
+        .effort-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(184, 156, 196, 0.2);
+        }
+
+        .effort-item::before {
+            content: '✓ ';
+            color: #ff9eb3;
+            font-weight: bold;
+            font-size: 1.3em;
+            margin-right: 5px;
+        }
+
+        .secret-message {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 50px;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(255, 158, 179, 0.5);
+            display: none;
+            z-index: 2000;
+            max-width: 90%;
+            text-align: center;
+            border: 3px solid #ffb3cc;
+        }
+
+        .secret-message.show {
+            display: block;
+            animation: popIn 0.5s;
+        }
+
+        @keyframes popIn {
+            0% {
+                transform: translate(-50%, -50%) scale(0.5);
+                opacity: 0;
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 1;
+            }
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            display: none;
+            z-index: 1500;
+            backdrop-filter: blur(5px);
+        }
+
+        .overlay.show {
+            display: block;
+        }
+
+        .final-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            margin: 35px 0;
+        }
+
+        .final-btn {
+            font-family: 'Quicksand', sans-serif;
+            padding: 23px;
+            font-size: 1.2em;
+            background: linear-gradient(135deg, #ff9eb3 0%, #b89cc4 100%);
+            border: none;
+            border-radius: 22px;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 700;
+            box-shadow: 0 8px 20px rgba(255, 158, 179, 0.4);
+        }
+
+        .final-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(255, 158, 179, 0.6);
+        }
+
+        .close-secret {
+            margin-top: 25px;
+            padding: 15px 40px;
+            background: linear-gradient(135deg, #ff9eb3 0%, #ffb3cc 100%);
+            border: none;
+            border-radius: 20px;
+            color: white;
+            cursor: pointer;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 700;
+            font-size: 1.1em;
+            transition: all 0.3s;
+        }
+
+        .close-secret:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(255, 158, 179, 0.5);
+        }
+
+        .character {
+            font-size: 9em;
+            margin: 25px 0;
+            cursor: pointer;
+            transition: all 0.4s;
+            display: inline-block;
+        }
+
+        .character:hover {
+            transform: scale(1.15) rotate(10deg);
+            filter: drop-shadow(0 10px 20px rgba(255, 182, 193, 0.4));
+        }
+
+        .response-popup {
+            position: fixed;
+            bottom: -200px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, white 0%, #fff5f8 100%);
+            padding: 30px 50px;
+            border-radius: 25px;
+            box-shadow: 0 15px 50px rgba(255, 158, 179, 0.5);
+            transition: bottom 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            z-index: 3000;
+            text-align: center;
+            font-size: 1.25em;
+            font-weight: 700;
+            color: #8b5a6e;
+            border: 3px solid #ffb3cc;
+            max-width: 90%;
+        }
+
+        .response-popup.show {
+            bottom: 40px;
+        }
+
+        .special-text {
+            background: linear-gradient(135deg, #ff9eb3 0%, #b89cc4 50%, #ff9eb3 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 800;
+            font-size: 1.1em;
+        }
+
+        .sticker-collection {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 25px 0;
+            flex-wrap: wrap;
+        }
+
+        .sticker {
+            font-size: 3em;
+            cursor: pointer;
+            transition: all 0.3s;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .sticker:nth-child(1) { animation-delay: 0s; }
+        .sticker:nth-child(2) { animation-delay: 0.5s; }
+        .sticker:nth-child(3) { animation-delay: 1s; }
+        .sticker:nth-child(4) { animation-delay: 1.5s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .sticker:hover {
+            transform: scale(1.3) rotate(15deg);
+        }
+
+        .love-meter {
+            background: linear-gradient(135deg, #fff5f8 0%, #f5f0ff 100%);
+            padding: 25px;
+            border-radius: 20px;
+            margin: 25px 0;
+        }
+
+        .meter-bar {
+            width: 100%;
+            height: 30px;
+            background: #e0e0e0;
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .meter-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #ff9eb3 0%, #ffb3cc 50%, #ff9eb3 100%);
+            width: 0%;
+            transition: width 2s ease;
+            border-radius: 15px;
+        }
+
+        .countdown {
+            font-size: 3em;
+            font-weight: 800;
+            margin: 20px 0;
+            background: linear-gradient(135deg, #ff9eb3 0%, #b89cc4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .confession-box {
+            background: linear-gradient(135deg, #fff0f8 0%, #f5f0ff 100%);
+            padding: 30px;
+            border-radius: 20px;
+            margin: 20px 0;
+            border: 3px dashed #ffb3cc;
+            position: relative;
+        }
+
+        .confession-box::before {
+            content: '💌';
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2.5em;
+            background: white;
+            padding: 5px 15px;
+            border-radius: 50%;
+        }
+
+        .long-plea {
+            background: linear-gradient(135deg, #fff5f8 0%, #f5f0ff 100%);
+            padding: 35px;
+            border-radius: 25px;
+            margin: 25px 0;
+            border: 3px solid #ffb3cc;
+            text-align: left;
+            line-height: 1.9;
+        }
+
+        .plea-text {
+            font-size: 1.15em;
+            margin-bottom: 15px;
+            color: #6b5b6e;
+        }
+
+        .promise-card {
+            background: white;
+            padding: 25px;
+            border-radius: 20px;
+            margin: 15px 0;
+            border-left: 5px solid #ff9eb3;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .promise-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 20px rgba(255, 158, 179, 0.3);
+        }
+
+        .promise-title {
+            font-size: 1.3em;
+            font-weight: 700;
+            color: #b89cc4;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2em; }
+            h2 { font-size: 1.5em; }
+            .cute-card { padding: 35px 25px; }
+            .hidden-secret { font-size: 3em; }
+            .secret-hint { font-size: 0.85em; padding: 12px 20px; }
+            .character { font-size: 7em; }
+            .response-popup { padding: 25px 35px; font-size: 1.1em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-hearts" id="floatingHearts"></div>
+    <div class="overlay" id="overlay"></div>
+    <div class="hidden-secret" id="movingHeart" onclick="showSecret()">💝</div>
+    <div class="secret-hint" id="hintText">Coba Tekan! 👆✨</div>
+    
+    <div class="secret-message" id="secretMessage">
+        <div class="emoji-big" style="animation: none;">🤭</div>
+        <h2>Ketahuan Deh! 😏</h2>
+        <p style="font-size: 1.4em; margin: 25px 0; line-height: 1.7;">
+            Kalo kamu baca ini, berarti kamu <span class="special-text">ga marah sepenuhnya</span> dong? 🥺
+        </p>
+        <p style="font-size: 1.2em; color: #b89cc4;">
+            Masih ada <strong>ruang buat aku</strong> di hati kamu kan? 
+        </p>
+        <div class="sticker-collection">
+            <span class="sticker">💕</span>
+            <span class="sticker">✨</span>
+            <span class="sticker">🌸</span>
+        </div>
+        <button class="close-secret" onclick="closeSecret()">Iya deh... aku ga bisa bohong 😊</button>
+    </div>
+
+    <div class="container">
+        <!-- Section 1: Opening -->
+        <section>
+            <div class="cute-card">
+                <div class="emoji-big" onclick="emojiClick(this, '🥺', '😭')">🥺</div>
+                <div class="typing-text" id="openingText"></div>
+                <p style="font-size: 0.9em; opacity: 0.6; margin-top: 15px;">*klik emoji-nya*</p>
+            </div>
+        </section>
+
+        <!-- Section 2: Love Meter -->
+        <section>
+            <div class="cute-card">
+                <h2>Tingkat Kesayangan Kamu Ke Aku 📊</h2>
+                <p style="margin-bottom: 25px;">Walaupun lagi marah, tapi...</p>
+                <div class="love-meter">
+                    <p style="margin-bottom: 15px; font-weight: 600;">Loading...</p>
+                    <div class="meter-bar">
+                        <div class="meter-fill" id="loveMeter"></div>
+                    </div>
+                    <p style="margin-top: 15px; font-size: 1.3em; font-weight: 700; color: #ff9eb3;" id="meterText">0%</p>
+                </div>
+                <p style="font-size: 0.95em; opacity: 0.7; margin-top: 15px;">*aku yakin masih banyak kok* 😌</p>
+            </div>
+        </section>
+
+        <!-- Section 3: Apa Yang Aku Pelajari -->
+        <section>
+            <div class="cute-card">
+                <h2>Apa Yang Aku Pelajari Dari Ini 📚</h2>
+                <p style="margin-bottom: 25px;">Setiap kesalahan adalah pelajaran...</p>
+                <div class="effort-list">
+                    <div class="effort-item">Perasaan orang ga bisa diremehkan, apalagi perasaan orang yang aku sayang</div>
+                    <div class="effort-item">Komunikasi itu kuncinya - ngomongin masalah lebih baik daripada numpuk</div>
+                    <div class="effort-item">Ego itu musuh terbesar dalam hubungan, lebih baik minta maaf daripada benar sendiri</div>
+                    <div class="effort-item">Effort itu bukan cuma di awal, tapi konsisten setiap hari</div>
+                    <div class="effort-item">Trust itu gampang rusak tapi susah dibangun lagi - harus dijaga</div>
+                </div>
+                <p style="font-size: 1.05em; margin-top: 20px; line-height: 1.7; color: #7a5d7f;">
+                    Aku ga akan buang-buang pelajaran ini. Aku mau jadi lebih baik, bukan cuma bilang doang.
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 4: Red Flags Yang Aku Akuin -->
+        <section>
+            <div class="cute-card">
+                <h2>Red Flags Aku Yang Harus Diperbaiki 🚩</h2>
+                <p style="margin-bottom: 25px;">Jujur sama diri sendiri dulu, baru bisa berubah:</p>
+                <div class="confession-box">
+                    <p style="font-size: 1.15em; line-height: 1.8; margin-bottom: 15px;">
+                        ❌ <strong>Suka defensif</strong> pas dikritik, padahal harusnya dengerin dulu<br><br>
+                        ❌ <strong>Kurang aware</strong> sama perasaan orang lain, too focused on myself<br><br>
+                        ❌ <strong>Janji ga ditepatin</strong> - ngomong A tapi lakuin B<br><br>
+                        ❌ <strong>Komunikasi kurang</strong> - sering diamkan masalah terus<br><br>
+                        ❌ <strong>Take things for granted</strong> - lupa appreciate hal-hal kecil
+                    </p>
+                    <p style="font-size: 1.2em; margin-top: 25px; color: #ff9eb3; font-weight: 700; text-align: center;">
+                        Aku acknowledge semua ini. Dan aku committed buat fix them one by one.
+                    </p>
+                </div>
+                <p style="font-size: 1em; margin-top: 15px; color: #8b5a6e; line-height: 1.7;">
+                    Growth starts with awareness. Aku ga akan denial lagi, aku mau honest sama diri sendiri biar bisa jadi lebih baik buat kamu.
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 5: Mood Checker -->
+        <section>
+            <div class="cute-card">
+                <h2>Kesel Kamu Level Berapa? 🎚️</h2>
+                <p>Pilih yang paling deket sama perasaan kamu sekarang...</p>
+                <div class="mood-buttons">
+                    <button class="mood-btn" onclick="selectMood('volcanic')">
+                        🌋 Kesel level gunung meletus
+                    </button>
+                    <button class="mood-btn" onclick="selectMood('angry')">
+                        😡 Kesel banget (classic)
+                    </button>
+                    <button class="mood-btn" onclick="selectMood('upset')">
+                        😒 Kesel tapi ga ekstrem
+                    </button>
+                    <button class="mood-btn" onclick="selectMood('shy')">
+                        🥺 Udah mulai luluh tapi gengsi
+                    </button>
+                    <button class="mood-btn" onclick="selectMood('soft')">
+                        😌 Sebenernya udah ga gitu marah sih...
+                    </button>
+                </div>
+                <div class="mood-response" id="moodResponse"></div>
+            </div>
+        </section>
+        
+        <section>
+            <div class="cute-card">
+                <h2>Real Talk 💬</h2>
+                <div class="confession-box">
+                    <p style="font-size: 1.25em; line-height: 1.8; margin-bottom: 15px;">
+                        Aku tau aku <strong>salah</strong>.<br>
+                        Dan aku ga akan bilang "tapi kamu juga..."
+                    </p>
+                    <p style="font-size: 1.15em; line-height: 1.7; color: #7a5d7f;">
+                        Karena ini tentang aku yang <span class="special-text">kurang peka</span>,<br>
+                        tentang aku yang terlalu <span class="special-text">egois</span>,<br>
+                        tentang aku yang lupa kalo <span class="special-text">kamu itu berharga banget</span>.
+                    </p>
+                </div>
+                <div class="character" onclick="characterClick()">🐻</div>
+                <p style="font-size: 0.9em; opacity: 0.7;">*beruangnya pengen dipeluk*</p>
+            </div>
+        </section>
+
+        <section>
+            <div class="cute-card">
+                <h2>Btw... 💭</h2>
+                <div class="gombal-box" onclick="gombalClick(this, 0)">
+                    Kamu tau ga sih, yang paling susah di dunia itu apa?<br>
+                    <strong>Bikin kamu kesel.</strong><br>
+                    Soalnya efeknya ke aku itu... berat banget.
+                </div>
+                <div class="gombal-box" onclick="gombalClick(this, 1)">
+                    Aku bisa tahan lapar, tahan capek, tahan begadang.<br>
+                    Tapi <span class="special-text">ga bisa tahan kamu cuek</span>.<br>
+                    Itu torture level maksimal.
+                </div>
+                <div class="gombal-box" onclick="gombalClick(this, 2)">
+                    Kamu marah aja masih lucu sih honestly.<br>
+                    Tapi aku lebih suka kamu senyum.<br>
+                    Karena <strong>senyum kamu itu comfort zone aku</strong>.
+                </div>
+                <div class="gombal-box" onclick="gombalClick(this, 3)">
+                    Fun fact: Aku takut kehilangan kamu.<br>
+                    Bukan karena ga ada yang gantiin,<br>
+                    tapi karena <span class="special-text">ga ada yang sama</span> kayak kamu.
+                </div>
+                <p style="font-size: 0.9em; opacity: 0.6; margin-top: 15px;">*klik tiap box-nya buat reaksi*</p>
+            </div>
+        </section>
+
+        <section>
+            <div class="cute-card">
+                <div class="quiz-container">
+                    <div class="quiz-question">
+                        Aku ini nyebelin, BUT... ? 🤔
+                    </div>
+                    <div class="quiz-options">
+                        <button class="quiz-btn" onclick="answerQuiz('a')">
+                            A. Masih kamu sayang (somehow)
+                        </button>
+                        <button class="quiz-btn" onclick="answerQuiz('b')">
+                            B. Lumayan bikin kangen juga
+                        </button>
+                        <button class="quiz-btn" onclick="answerQuiz('c')">
+                            C. Ga ada yang perfect, aku nerima aja
+                        </button>
+                        <button class="quiz-btn" onclick="answerQuiz('d')">
+                            D. Semua jawaban di atas (correct!)
+                        </button>
+                    </div>
+                </div>
+                <div class="mood-response" id="quizResponse"></div>
+            </div>
+        </section>
+
+        <!-- Section 9: Janji Realistis -->
+        <section>
+            <div class="cute-card">
+                <h2>Aku Janji (Yang Realistis) 🤝</h2>
+                <p style="margin-bottom: 25px;">Bukan janji kosong, tapi komitmen nyata:</p>
+                
+                <div class="promise-card" onclick="promiseClick(0)">
+                    <div class="promise-title">💬 Komunikasi Lebih Baik</div>
+                    <p>Dengerin kamu sampai selesai, ga langsung defensive. Ngomong pas ada masalah, bukan numpuk sampe meledak.</p>
+                </div>
+                
+                <div class="promise-card" onclick="promiseClick(1)">
+                    <div class="promise-title">⏰ Lebih Perhatian Waktu</div>
+                    <p>Kasih update kalo lagi sibuk. Ga ngilang tiba-tiba. Quality time > quantity time.</p>
+                </div>
+                
+                <div class="promise-card" onclick="promiseClick(2)">
+                    <div class="promise-title">🎯 Lebih Peka</div>
+                    <p>Baca mood kamu, ngerti pas kamu butuh space atau butuh ditemani. Ga cuma mikirin aku doang.</p>
+                </div>
+                
+                <div class="promise-card" onclick="promiseClick(3)">
+                    <div class="promise-title">💕 Appreciate Lebih</div>
+                    <p>Bilang terima kasih untuk hal-hal kecil. Notice effort kamu. Make you feel valued every day.</p>
+                </div>
+                
+                <div class="promise-card" onclick="promiseClick(4)">
+                    <div class="promise-title">🛡️ Jadi Safe Space</div>
+                    <p>Kamu bisa cerita apapun tanpa takut di-judge. Aku akan always be on your side.</p>
+                </div>
+                
+                <p style="font-size: 0.95em; opacity: 0.7; margin-top: 25px;">
+                    *klik tiap janji buat lihat komitmen aku*
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 10: Effort List -->
+        <section>
+            <div class="cute-card">
+                <h2>Action Plan Konkrit 💪</h2>
+                <p style="margin-bottom: 25px;">Bukan cuma kata-kata, ini rencana nyata:</p>
+                <div class="effort-list">
+                    <div class="effort-item">Slow down pas diskusi, ga ngegas atau emosional</div>
+                    <div class="effort-item">Tanya "gimana perasaan kamu?" lebih sering</div>
+                    <div class="effort-item">Ga ghosting atau silent treatment, komunikasi tetep jalan</div>
+                    <div class="effort-item">Morning & goodnight text (kalo kamu suka!)</div>
+                    <div class="effort-item">Plan quality time bareng minimal seminggu sekali</div>
+                    <div class="effort-item">Inget tanggal-tanggal penting yang meaningful buat kita</div>
+                    <div class="effort-item">Minta maaf dengan proper kalo salah, ga defensif</div>
+                    <div class="effort-item">Support goals dan passion kamu 100%</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 11: Countdown -->
+        <section>
+            <div class="cute-card">
+                <h2>Sudah Berapa Lama Aku Kangen? ⏰</h2>
+                <div class="countdown" id="countdown">00:00:00</div>
+                <p style="font-size: 1.15em; margin: 20px 0; line-height: 1.7;">
+                    Setiap detik tanpa kamu senyum ke aku<br>
+                    itu kayak <span class="special-text">nonton loading screen</span> yang ga kelar-kelar.
+                </p>
+                <div class="sticker-collection">
+                    <span class="sticker" onclick="stickerClick(this)">😭</span>
+                    <span class="sticker" onclick="stickerClick(this)">💔</span>
+                    <span class="sticker" onclick="stickerClick(this)">⏳</span>
+                    <span class="sticker" onclick="stickerClick(this)">🥺</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 12: Bujukan Panjang -->
+        <section>
+            <div class="cute-card">
+                <h2>Yang Paling Aku Takutin... 💔</h2>
+                <div class="long-plea">
+                    <p class="plea-text">
+                        Beibbeeee, aku tau aku salah. Dan aku ga akan cari pembenaran atau alasan apapun buat ngeles. Aku salah, titik.
+                    </p>
+                    <p class="plea-text">
+                        Tapi yang paling bikin aku takut itu bukan kamu marah. Orang marah itu wajar, apalagi kalo emang aku yang bikin kesalahan. Yang paling aku takutin itu... <span class="special-text">kamu diemin aku</span>.
+                    </p>
+                    <p class="plea-text">
+                        Karena pas kamu diem, aku ga tau apa yang kamu rasain. Aku ga tau seberapa sakit hati kamu. Aku ga tau gimana cara aku memperbaiki ini. Rasanya kayak <strong>aku kehilangan akses ke kamu</strong>, padahal kamu ada di situ tapi berasa jauh banget.
+                    </p>
+                    <p class="plea-text">
+                        <strong>Jangan pernah diemin aku, please...</strong> Marahin aja, bentak, curhat panjang lebar, apapun itu. Aku lebih milih kamu ngomel panjang sejam daripada kamu diem semenit. Karena pas kamu ngomel, at least aku tau apa yang kamu rasain. At least aku bisa dengerin. At least aku masih punya kesempatan buat perbaiki.
+                    </p>
+                    <p class="plea-text">
+                        Aku ga butuh kamu jadi perfect atau ga pernah marah. Aku cuma butuh kamu tetep <span class="special-text">komunikasi sama aku</span>. Ceritain apa yang bikin kamu kesel, apa yang bikin kamu kecewa, apa yang kamu butuhin dari aku.
+                    </p>
+                    <p class="plea-text">
+                        Karena hubungan kita ini <strong>bukan cuma tentang saat-saat bahagia</strong>. Ini juga tentang gimana kita handle pas lagi berantem, pas lagi kecewa, pas lagi ga setuju satu sama lain. Dan aku mau kita bisa ngomong, bukan diem-dieman.
+                    </p>
+                    <p class="plea-text">
+                        Aku janji bakal lebih dengerin. Aku janji ga akan langsung defensive. Aku janji akan kasih kamu space buat ngomong sampai selesai. Tapi please... <span class="special-text">jangan tutup komunikasi sama aku</span>. Jangan jadiin silent treatment sebagai solusi.
+                    </p>
+                    <p class="plea-text">
+                        Kalo kamu butuh waktu buat tenang dulu sebelum ngomong, aku paham. Ambil waktu yang kamu butuhin. Tapi bilang ke aku, "Aku butuh waktu dulu ya, nanti kita ngobrol." Itu aja udah cukup. At least aku tau kamu cuma butuh space, bukan lagi ninggalin aku.
+                    </p>
+                    <p class="plea-text" style="font-size: 1.25em; font-weight: 700; color: #ff9eb3; text-align: center; margin-top: 25px;">
+                        Aku takut kehilangan kamu, beibbeeee. Not because of a fight, but because we stopped talking about it. 💔
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 13: Ending -->
+        <section>
+            <div class="cute-card">
+                <h1>Intinya Gini... 💕</h1>
+                <p style="font-size: 1.35em; line-height: 1.9; margin: 30px 0;">
+                    Aku <strong>ga maksa</strong> kamu buat maafin aku sekarang.<br>
+                    Aku <strong>ga memaksa</strong> kamu langsung baikan.
+                </p>
+                <p style="font-size: 1.25em; line-height: 1.8; color: #7a5d7f; margin: 25px 0;">
+                    Aku cuma pengen jadi <span class="special-text">alasan kamu senyum hari ini</span>.<br>
+                    Aku cuma pengen kamu tau...<br>
+                    <strong style="font-size: 1.2em;">aku tulus</strong>.
+                </p>
+                <div class="emoji-big" style="animation: none; font-size: 6em;" onclick="emojiClick(this, '🌸', '💐')">🌸</div>
+                <div class="final-buttons">
+                    <button class="final-btn" onclick="finalResponse('smile')">
+                        😊 Oke aku senyum dikit deh
+                    </button>
+                    <button class="final-btn" onclick="finalResponse('forgive')">
+                        💗 Aku maafin (tapi jangan diulangin!)
+                    </button>
+                    <button class="final-btn" onclick="finalResponse('mad')">
+                        😒💞 Masih kesel tapi tetep sayang kok
+                    </button>
+                    <button class="final-btn" onclick="finalResponse('time')">
+                        ⏳ Aku butuh waktu dulu ya
+                    </button>
+                </div>
+                <p style="font-size: 0.95em; opacity: 0.6; margin-top: 25px;">
+                    Apapun pilihan kamu, aku terima. ❤️
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <div class="response-popup" id="responsePopup"></div>
+
+    <script>
+        // Floating hearts
+        function createFloatingHeart() {
+            const hearts = ['💕', '💗', '💖', '💝', '🌸', '✨', '💫', '🌺'];
+            const heart = document.createElement('div');
+            heart.className = 'float-heart';
+            heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+            heart.style.left = Math.random() * 100 + '%';
+            heart.style.animationDelay = Math.random() * 3 + 's';
+            heart.style.fontSize = (Math.random() * 15 + 20) + 'px';
+            document.getElementById('floatingHearts').appendChild(heart);
+            
+            setTimeout(() => heart.remove(), 6000);
+        }
+        
+        setInterval(createFloatingHeart, 500);
+
+        // Moving heart with smooth random movement
+        const movingHeart = document.getElementById('movingHeart');
+        const hintText = document.getElementById('hintText');
+        let currentX = 25;
+        let currentY = 25;
+        let targetX = 25;
+        let targetY = 25;
+        let isMoving = true;
+
+        function getRandomPosition() {
+            const margin = 80;
+            const maxX = window.innerWidth - margin;
+            const maxY = window.innerHeight - margin;
+            return {
+                x: margin + Math.random() * (maxX - margin * 2),
+                y: margin + Math.random() * (maxY - margin * 2)
+            };
+        }
+
+        function animateHeart() {
+            if (!isMoving) return;
+
+            const dx = targetX - currentX;
+            const dy = targetY - currentY;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+
+            if (distance < 5) {
+                const newPos = getRandomPosition();
+                targetX = newPos.x;
+                targetY = newPos.y;
+            } else {
+                currentX += dx * 0.02;
+                currentY += dy * 0.02;
+            }
+
+            movingHeart.style.left = currentX + 'px';
+            movingHeart.style.top = currentY + 'px';
+            movingHeart.style.right = 'auto';
+            movingHeart.style.bottom = 'auto';
+
+            hintText.style.left = (currentX + 70) + 'px';
+            hintText.style.top = currentY + 'px';
+            hintText.style.right = 'auto';
+            hintText.style.bottom = 'auto';
+
+            requestAnimationFrame(animateHeart);
+        }
+
+        setTimeout(() => {
+            const initialPos = getRandomPosition();
+            targetX = initialPos.x;
+            targetY = initialPos.y;
+            animateHeart();
+        }, 2000);
+
+        // Opening typing effect
+        const openingTexts = [
+            "Halo beibbeeee...",
+            "ini website khusus dari aku",
+            "yang lagi desperate banget",
+            "pengen kamu ga marah 😔👉👈"
+        ];
+        
+        let currentLine = 0;
+        let currentChar = 0;
+        const openingElement = document.getElementById('openingText');
+        
+        function typeOpening() {
+            if (currentLine < openingTexts.length) {
+                if (currentChar < openingTexts[currentLine].length) {
+                    openingElement.innerHTML += openingTexts[currentLine][currentChar];
+                    currentChar++;
+                    setTimeout(typeOpening, 50);
+                } else {
+                    openingElement.innerHTML += '<br>';
+                    currentLine++;
+                    currentChar = 0;
+                    setTimeout(typeOpening, 600);
+                }
+            }
+        }
+        
+        setTimeout(typeOpening, 1000);
+
+        // Love meter animation
+        setTimeout(() => {
+            const meter = document.getElementById('loveMeter');
+            const meterText = document.getElementById('meterText');
+            let percentage = 0;
+            const targetPercentage = 99;
+            
+            const interval = setInterval(() => {
+                if (percentage < targetPercentage) {
+                    percentage += 1;
+                    meter.style.width = percentage + '%';
+                    meterText.textContent = percentage + '%';
+                } else {
+                    clearInterval(interval);
+                    meterText.textContent = targetPercentage + '% (masih banyak kan beibbeeee? 🥺)';
+                }
+            }, 25);
+        }, 2000);
+
+        // Mood selector
+        function selectMood(mood) {
+            const responseDiv = document.getElementById('moodResponse');
+            const responses = {
+                volcanic: "OH NO! 🌋😱 Sampe segitunya?! Aku beneran minta maaf banget beibbeeee... Aku tau aku udah over the line. Please kasih aku kesempatan buat perbaiki ini. Aku janji ga akan bikin kamu sesakit ini lagi. I'm so sorry... 😭💔",
+                angry: "Ya ampun... 😭 Aku sampe segituya bikin kamu kesel? Maafin aku beibbeeee... Serius, aku ga akan ngulangin lagi. Kamu terlalu berharga buat aku sakitin terus. Aku mau jadi lebih baik. Promise. 🥺",
+                upset: "Kesel dikit aja udah bikin aku panik nih 🥺 Maaf ya beibbeeee... Aku tau kamu pasti capek banget sama tingkah aku. Aku mau berubah kok, slow tapi sure. Kasih aku kesempatan?",
+                shy: "AHA! KETAHUAN! 😏 Udah mulai luluh tapi masih gengsi ya? Gapapa kok aku paham... Proud people problems. Tapi plis jangan cuek lama-lama dong, aku kangen banget sama kamu yang perhatian 🥺💕",
+                soft: "Awww 🥰 Sebenernya udah ga gitu marah kan? Thank you beibbeeee... Aku appreciate banget kamu mau baca website alay ini sampe sini. Berarti masih ada chance buat aku dong? 😌✨"
+            };
+            
+            responseDiv.textContent = responses[mood];
+            responseDiv.classList.add('show');
+            
+            setTimeout(() => {
+                responseDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }, 100);
+        }
+
+        // Character click
+        function characterClick() {
+            showPopup("Beruangnya bilang: 'Dia tulus kok, trust me! Aku kenal dia, orangnya emang bego tapi hatinya baik.' 🐻💕");
+        }
+
+        // Promise click
+        const promiseResponses = [
+            "Aku janji akan jadi pendengar yang lebih baik! 💬✨",
+            "Time for you is priority, bukan optional! ⏰💕",
+            "Aku akan lebih aware sama feelings kamu! 🎯🥺",
+            "Kamu deserve to feel special every day! 💕👑",
+            "Aku akan always be your safe place! 🛡️💗"
+        ];
+
+        function promiseClick(index) {
+            showPopup(promiseResponses[index]);
+        }
+
+        // Gombal click
+        const gombalReactions = [
+            "✨ Deep banget ya... tapi bener sih",
+            "💕 Okay that's actually sweet",
+            "🥺 Stop bikin aku luluh!",
+            "😭 Ini mah unfair, kok bisa sweet gini sih"
+        ];
+
+        function gombalClick(element, index) {
+            const popup = document.getElementById('responsePopup');
+            popup.textContent = gombalReactions[index];
+            popup.classList.add('show');
+            
+            element.style.transform = 'scale(1.05)';
+            setTimeout(() => {
+                element.style.transform = 'scale(1)';
+            }, 200);
+            
+            setTimeout(() => {
+                popup.classList.remove('show');
+            }, 3000);
+        }
+
+        // Quiz answer
+        function answerQuiz(answer) {
+            const responseDiv = document.getElementById('quizResponse');
+            const responses = {
+                a: "BENER! 💕 Aku tau kok kamu masih sayang... Makanya aku ga mau sia-siain perasaan kamu lagi. Aku ga akan ambil granted lagi. Thank you for still loving me despite my flaws. 🥺",
+                b: "Dirinduin? 🥺 Wait... REALLY?! Berarti masih ada peluang dong... Aku juga kangen banget sama kamu beibbeeee. Kangen ngobrol, kangen becanda, kangen everything about you. Can we go back to that?",
+                c: "Wise choice 😌 Iya sih, nobody's perfect. Tapi aku mau jadi versi terbaik dari aku buat kamu. Kamu deserve someone yang effort, dan aku mau jadi orang itu. Will you give me a chance?",
+                d: "PINTAR BANGET! 😍 Semua jawabannya emang bener kan? Berarti kamu masih care dong sama hubungan kita... Aku sayang kamu juga beibbeeee, so freaking much. Makanya aku bikin website absurd ini buat kamu. 💕✨"
+            };
+            
+            responseDiv.textContent = responses[answer];
+            responseDiv.classList.add('show');
+            
+            setTimeout(() => {
+                responseDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }, 100);
+        }
+
+        // Countdown
+        let seconds = 0;
+        setInterval(() => {
+            seconds++;
+            const hours = Math.floor(seconds / 3600);
+            const mins = Math.floor((seconds % 3600) / 60);
+            const secs = seconds % 60;
+            document.getElementById('countdown').textContent = 
+                `${hours.toString().padStart(2, '0')}:${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+        }, 1000);
+
+        // Sticker click
+        function stickerClick(element) {
+            element.style.transform = 'scale(1.5) rotate(360deg)';
+            setTimeout(() => {
+                element.style.transform = 'scale(1) rotate(0deg)';
+            }, 500);
+        }
+
+        // Emoji click
+        function emojiClick(element, emoji1, emoji2) {
+            element.textContent = element.textContent === emoji1 ? emoji2 : emoji1;
+        }
+
+        // Secret message
+        function showSecret() {
+            isMoving = false;
+            document.getElementById('overlay').classList.add('show');
+            document.getElementById('secretMessage').classList.add('show');
+            document.getElementById('hintText').style.display = 'none';
+        }
+
+        function closeSecret() {
+            isMoving = true;
+            document.getElementById('overlay').classList.remove('show');
+            document.getElementById('secretMessage').classList.remove('show');
+            document.getElementById('hintText').style.display = 'block';
+            showPopup("Aku tau kamu ga bisa bohong... 😌💕");
+            setTimeout(() => {
+                const newPos = getRandomPosition();
+                targetX = newPos.x;
+                targetY = newPos.y;
+                animateHeart();
+            }, 500);
+        }
+
+        // Final response
+        function finalResponse(type) {
+            const responses = {
+                smile: "YESSS! 🎉✨ Mission accomplished! Senyum kamu itu worth all the effort. Makasih ya beibbeeee udah mau senyum buat aku. You just made my day! 💕",
+                forgive: "OMG MAKASIH BEIBBEEEE! 😭💗 Aku swear ga akan ngecewain kamu lagi. This is my second chance dan aku ga akan waste it. I love you so much! Thank you for believing in me! 🥺✨",
+                mad: "Marah tapi masih sayang? 🥺💕 Honestly that's more than enough for me... Aku akan usaha sampe kamu ga kesel lagi. Slow process tapi aku committed. Thank you for still caring about us. Love you! 😭❤️",
+                time: "Aku paham beibbeeee... ⏳💕 Take all the time you need. Aku ga akan pressure kamu. Aku cuma mau kamu tau aku akan selalu di sini, waiting patiently. Whenever you're ready, I'm here. Always. 🌸"
+            };
+            
+            showPopup(responses[type]);
+        }
+
+        function showPopup(message) {
+            const popup = document.getElementById('responsePopup');
+            popup.textContent = message;
+            popup.classList.add('show');
+            
+            setTimeout(() => {
+                popup.classList.remove('show');
+            }, 5000);
+        }
+
+        // Close overlay when clicked
+        document.getElementById('overlay').addEventListener('click', closeSecret);
+    </script>
+</body>
+</html>
